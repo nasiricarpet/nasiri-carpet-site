@@ -1,11 +1,28 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import GalleryApp from '../components/GalleryApp';
+import '../styles/global.css';
 ---
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>گالری فرش نصیری | دکتر محمدرضا نصیری</title>
+  </head>
+  <body>
+    <main class="container">
+      <header style="text-align: center; padding-block: 2rem;">
+        <h1 style="margin: 0;">گالری فرش نصیری</h1>
+        <p style="color: #999; margin-top: 0.5rem;">
+          تجربه‌ای متفاوت از مشاهده فرش‌های نفیس دستباف
+        </p>
+      </header>
 
-<Layout>
-	<Welcome />
-</Layout>
+      <!-- بارگذاری اپلیکیشن گالری تعاملی -->
+      <GalleryApp client:only="react" />
+
+      <footer style="text-align: center; padding-block: 3rem; color: #666;">
+        <p>© ۱۴۰۴ — دکتر محمدرضا نصیری | کارشناس رسمی فرش</p>
+      </footer>
+    </main>
+  </body>
+</html>
